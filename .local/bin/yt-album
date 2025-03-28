@@ -9,14 +9,14 @@
 
 echo "Retrieving album information..."
 # Downloading the json data of the first track only
-jsondata=`yt-dlp -j --playlist-items 1 $1`
+jsondata=$(yt-dlp -j --playlist-items 1 "$1")
 
 # Grabbing the "release_year" and "release_date" and comparing which is lowest integer.
 # Sometimes Youtube Music doesn't even populate the "release_date" field, but when it does we need to compare it to "release_year"
 # If both the "release_date" and "release_year" exist, check which one is the lower integer, and that should be the actual album release year.
-jq_release_year_1=`echo $jsondata | jq -r '.release_year'`
-jq_release_date=`echo $jsondata | jq -r '.release_date'`
-if [ $jq_release_date != 'null' ]; then
+jq_release_year_1=$(echo $jsondata | jq -r ".release_year")
+jq_release_date=$(echo $jsondata | jq -r ".release_date")
+if [ "$jq_release_date" != "null" ]; then
         jq_release_year_2=${jq_release_date::-4};
         year=$((jq_release_year_1<jq_release_year_2?jq_release_year_1:jq_release_year_2));
 else
@@ -24,15 +24,15 @@ else
 fi
 
 # Grabbing the artist then removing any superfluous information after the first comma. Some artists put every band memember into the artist field.
-jq_artist=`echo $jsondata | jq -r '.artist'`
+jq_artist=$(echo $jsondata | jq -r '.artist')
 artist=${jq_artist%%,*}
-jq_uploader=`echo $jsondata | jq -r '.uploader'`
+jq_uploader=$(echo $jsondata | jq -r '.uploader')
 
 # If there is no artist, use the second argument passed to the program as the artist name.
-[ "$artist" = "null" ] && [ -n "$2" ] artist=$2
+[ "$artist" = "null" ] && [ -n "$2" ] && artist=$2
 
 # If there is no artist, neither second argument, use the uploader name.
-[ "$artist" = "null" ] && [ -z "$2" ] artist=$jq_uploader
+[ "$artist" = "null" ] && [ -z "$2" ] && artist=$jq_uploader
 
 echo "Album information retrieved..."
 # Pass to yt-dlp and begin download all the music!
