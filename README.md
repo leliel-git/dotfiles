@@ -25,5 +25,7 @@ This are my personal dotfiles. Feel free to use them for whatever you want.
 - And, of course, you will need [git](https://git-scm.com), to clone the repository.
 
 Then, run this.
-> git clone https://github.com/leliel-git/dotfiles.git
-> stow dotfiles
+```
+git clone https://github.com/leliel-git/dotfiles.git
+stow dotfiles
+```
