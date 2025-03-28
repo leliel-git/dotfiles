@@ -1,1 +1,2 @@
 -o %(title)s.%(ext)s
+--add-metadata
