@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if [ -n "$XDG_DATA_HOME" ]; then
+	chosen=$(cat $XDG_DATA_HOME/bookmarks/main | dmenu)
+else
+	chosen=$(cat $HOME/.local/share/bookmarks/main | dmenu)
+fi
+
+[ -z "$chosen" ] && exit 1
+
+if [ -n "$1" ]; then
+	xdotool type "$chosen"
+else
+	printf "%s" "$chosen" | xclip -selection clipboard
+	notify-send "'$chosen' copied to clipboard." &
+fi

@@ -1,0 +1,26 @@
+#!/bin/sh
+while read file
+do
+	fullpath="$(pwd)/$file"
+	case "$1" in
+	"w")
+		xwallpaper --focus "$file" &&
+		printf "%s\n%s\n" "#!/bin/sh" "xwallpaper --focus \"$file\"" > ~/.wallpaper &&
+		notify-send -u normal -i "$file" "was set as the wallpaper (centered)." ;;
+	"z")
+		xwallpaper --zoom "$file" &&
+		printf "%s\n%s\n" "#!/bin/sh" "xwallpaper --zoom \"$file\"" > ~/.wallpaper &&
+		notify-send -u normal -i "$file" "was set as the wallpaper (zoomed)." ;;
+	"y")
+		echo -n "$file" | xclip -selection clipboard &&
+		notify-send -u normal -i "$file" "copied to the clipboard." ;;
+	"r")
+		convert -rotate 90 "$file" "$file" ;;
+	"l")
+		convert -rotate -90 "$file" "$file" ;;
+	"f")
+		convert -flop "$file" "$file" ;;
+	"d")
+		rm "$file" ;;
+	esac
+done

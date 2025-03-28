@@ -1,0 +1,50 @@
+super + s
+	librewolf
+super + c
+	st -e cmus
+super + q
+	st -e donut
+super + z
+	zathura
+super + e
+	dmenu_unicode print
+super + v
+	dmenu_bookmarks print
+super + r
+	st -e nnn -deHr
+super + u
+	setxkbmap us
+super + y
+	setxkbmap latam
+super + o
+	bookmarkthis
+XF86MonBrightnessUp
+	lightup
+XF86MonBrightnessDown
+	lightdown
+XF86AudioNext
+	lightup
+XF86AudioPrev
+	lightdown
+XF86AudioRaiseVolume
+	pamixer -i 10
+XF86AudioLowerVolume
+	pamixer -d 10
+XF86AudioMute
+	mute
+Scroll_Lock
+	backlight
+Print
+	maim ~/img/screenshots/$(date +%Y-%m-%d:%H-%M-%S.png) | xclip -selection clipboard -t image/png -i $f
+super + Print
+	maim -s ~/img/screenshots/$(date +%Y-%m-%d:%H-%M-%S.png) | xclip -selection clipboard -t image/png -i $f
+super + Up 
+	xrandr -o inverted
+super + Left 
+	xrandr -o right
+super + Down 
+	xrandr -o normal
+super + Right 
+	xrandr -o left
+super + x
+	sxiv -rat ~/img

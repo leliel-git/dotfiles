@@ -1,0 +1,4 @@
+
+[Default Applications]
+inode/directory=nnn.desktop
+application/pdf=org.pwmt.zathura-pdf-poppler.desktop

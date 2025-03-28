@@ -1,0 +1,4 @@
+#!/bin/sh
+
+state=$(xset -q | grep "Scroll Lock:" | cut -d ":" -f 7)
+[ $state = "on" ] && xset led off || xset led on

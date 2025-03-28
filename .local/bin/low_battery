@@ -1,0 +1,10 @@
+#!/bin/sh
+
+bat_0=$(acpi -b | cut -d ' ' -f4)
+bat_0="${bat_0%??}"
+
+state=$(acpi -b | cut -d ' ' -f3)
+state="${state%?}"
+
+[ "$state" = "Discharging" ] && [ "$bat_0" -lt 21 ] && [ "$bat_0" -gt 10 ] && notify-send -t 60000 -u critical -i battery-level-10-symbolic "low battery"
+[ "$state" = "Discharging" ] && [ "$bat_0" -lt 11 ] && notify-send -t 60000 -u critical -i battery-level-0-symbolic "critical battery"
