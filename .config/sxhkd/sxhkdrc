@@ -32,6 +32,8 @@ XF86AudioLowerVolume
 	pamixer -d 10
 XF86AudioMute
 	mute
+XF86Calculator
+	toggle-networking
 Scroll_Lock
 	backlight
 Print

@@ -5,11 +5,11 @@ do
 	case "$1" in
 	"w")
 		xwallpaper --focus "$file" &&
-		printf "%s\n%s\n" "#!/bin/sh" "xwallpaper --focus \"$file\"" > ~/.wallpaper &&
+		printf "%s\n%s\n" "#!/bin/sh" "xwallpaper --focus \"$file\"" > ~/.config/wallpaper &&
 		notify-send -u normal -i "$file" "was set as the wallpaper (centered)." ;;
 	"z")
 		xwallpaper --zoom "$file" &&
-		printf "%s\n%s\n" "#!/bin/sh" "xwallpaper --zoom \"$file\"" > ~/.wallpaper &&
+		printf "%s\n%s\n" "#!/bin/sh" "xwallpaper --zoom \"$file\"" > ~/.config/wallpaper &&
 		notify-send -u normal -i "$file" "was set as the wallpaper (zoomed)." ;;
 	"y")
 		echo -n "$file" | xclip -selection clipboard &&
