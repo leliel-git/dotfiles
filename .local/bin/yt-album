@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ### Script for downloading albums from Youtube Music ##########
 ### Usage: yt-album <youtube music url> ###
