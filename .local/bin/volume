@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$1" = "increase" ]; then
+	pamixer -i 10
+	notify-send -i audio-volume-high-rtl-symbolic -t 2048 "volume increased: $(pamixer --get-volume)"
+else
+	pamixer -d 10
+	notify-send -i audio-volume-low-rtl-symbolic -t 2048 "volume decreased: $(pamixer --get-volume)"
+fi

@@ -1,3 +1,0 @@
-#!/bin/sh
-
-l=$(light) && [ "$l" = "0.00" ] && light -S 0.07 || light -S $(echo "scale=2; 2 * ${l}" | bc)
