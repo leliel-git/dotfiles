@@ -1,2 +1,2 @@
-.local/share/bookmarks/*
-.config/git/credentials
+home/.local/share/bookmarks/*
+home/.config/git/credentials
