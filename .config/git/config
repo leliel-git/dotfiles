@@ -3,3 +3,5 @@
 	name = leliel
 [credential]
 	helper = store
+[init]
+	defaultBranch = master
