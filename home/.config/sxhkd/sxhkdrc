@@ -7,9 +7,9 @@ super + q
 super + z
 	zathura
 super + e
-	dmenu_unicode print
+	dmenu-unicode print
 super + v
-	dmenu_bookmarks print
+	dmenu-bookmarks print
 super + r
 	st -e nnn -deHr
 super + u

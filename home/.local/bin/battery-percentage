@@ -1,0 +1,18 @@
+#!/bin/sh
+
+total=0
+count=0
+
+for battery in /sys/class/power_supply/BAT*; do
+	if [ -d "$battery" ]; then
+		capacity=$(cat "$battery/capacity")
+		total=$((total + capacity))
+		count=$((count + 1))
+	fi
+done
+
+if [ $count -gt 0 ]; then
+	echo "$((total / count))"
+else
+	echo "n/a"
+fi
