@@ -8,7 +8,7 @@
 #   $2: image width
 #   $3: image height
 
-exec 2 > /dev/null
+exec 2>/dev/null
 
 filepath="$1"
 filesize=$(du -bh "$1" | cut -f 1)
