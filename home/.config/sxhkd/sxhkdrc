@@ -50,3 +50,5 @@ super + Right
 	xrandr -o left
 super + x
 	sxiv -rat ~/img
+super + n
+	passmenu --type
