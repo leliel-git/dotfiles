@@ -6,9 +6,9 @@ if [ "$l" = "0.00" ] && [ "$1" = "increase" ]; then
 	light -S 0.07
 	notify-send -i night-light-symbolic -t 2048 "light level increased: $(light)"
 elif [ "$1" = "increase" ]; then
-	light -S $(echo "scale=2; 2 * ${l}" | bc)
+	light -S "$(echo "scale=2; 2 * ${l}" | bc)"
 	notify-send -i night-light-symbolic -t 2048 "light level increased: $(light)"
 else
-	light -S $(echo "scale=2; $l / 2" | bc)
+	light -S "$(echo "scale=2; $l / 2" | bc)"
 	notify-send -i night-light-disabled-symbolic -t 2048 "light level decreased: $(light)"
 fi

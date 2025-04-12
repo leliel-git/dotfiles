@@ -1,9 +1,9 @@
 #!/bin/sh
 
 if [ -n "$XDG_DATA_HOME" ]; then
-	chosen=$(cat $XDG_DATA_HOME/bookmarks/main | dmenu)
+	chosen=$(cat "$XDG_DATA_HOME"/bookmarks/main | dmenu)
 else
-	chosen=$(cat $HOME/.local/share/bookmarks/main | dmenu)
+	chosen=$(cat "$HOME"/.local/share/bookmarks/main | dmenu)
 fi
 
 [ -z "$chosen" ] && exit 1

@@ -14,24 +14,24 @@ jsondata=$(yt-dlp -j --playlist-items 1 "$1")
 # Grabbing the "release_year" and "release_date" and comparing which is lowest integer.
 # Sometimes, the website doesn't even populate the "release_date" field, but when it does we need to compare it to "release_year"
 # If both the "release_date" and "release_year" exist, check which one is the lower integer, and that should be the actual album release year.
-jq_release_year_1=$(echo $jsondata | jq -r ".release_year")
-jq_release_date=$(echo $jsondata | jq -r ".release_date")
+jq_release_year_1=$(echo "$jsondata" | jq -r ".release_year")
+jq_release_date=$(echo "$jsondata" | jq -r ".release_date")
 if [ "$jq_release_date" != "null" ]; then
-        jq_release_year_2=${jq_release_date::-4};
+	jq_release_year_2=$(printf '%s' "$jq_release_date" | sed 's/....$//');
         year=$((jq_release_year_1<jq_release_year_2?jq_release_year_1:jq_release_year_2));
 else
         year=$jq_release_year_1;
 fi
 
 # Grabbing the artist then removing any superfluous information after the first comma. Some artists put every band memember into the artist field.
-jq_artist=$(echo $jsondata | jq -r '.artist')
+jq_artist=$(echo "$jsondata" | jq -r '.artist')
 artist=${jq_artist%%,*}
 
 # If there is no artist, use the second argument passed to the program as the artist name, and if there isn't any, use the uploader name.
-[ "$artist" = "null" ] && [ -n "$2" ] && artist=$2 || artist=$(echo $jsondata | jq -r '.uploader')
+[ "$artist" = "null" ] && [ -n "$2" ] && artist=$2 || artist=$(echo "$jsondata" | jq -r '.uploader')
 
 # Grabbing the artist then removing any superfluous information after the first comma. Some artists put every band memember into the artist field.
-jq_album=$(echo $jsondata | jq -r '.album')
+jq_album=$(echo "$jsondata" | jq -r '.album')
 album=${jq_album%%,*}
 
 # If there is no album, use the third argument passed to the program as the album.

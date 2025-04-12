@@ -21,6 +21,6 @@ do
 	"f")
 		convert -flop "$file" "$file" ;;
 	"d")
-		trash "$file" ;;
+		rm "$file" ;;
 	esac
 done
