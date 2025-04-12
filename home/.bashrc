@@ -14,14 +14,14 @@ if [[ $- != *i* ]] ; then
 fi
 
 # Put your fun stuff here.
-alias sudo="sudo "
+alias doas="doas "
 alias vi="nvim"
 alias ls="ls -XF --color=auto --group-directories-first"
 alias li="ls -lhA"
 alias ll="ls -lh"
-alias e="sudo emerge"
-alias monerod="sudo monerod"
-alias wallet="(cd $XDG_DATA_HOME/monero/wallets && sudo monero-wallet-cli)"
+alias e="doas emerge"
+alias monerod="doas monerod"
+alias wallet="(cd $XDG_DATA_HOME/monero/wallets && doas monero-wallet-cli)"
 alias nnn="nnn -deHr"
 alias sxiv="sxiv -rat"
 alias todo="vi ~/docs/todo.md"
