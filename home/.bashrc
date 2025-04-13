@@ -24,10 +24,8 @@ alias monerod="doas monerod"
 alias wallet="(cd $XDG_DATA_HOME/monero/wallets && doas monero-wallet-cli)"
 alias nnn="nnn -deHr"
 alias sxiv="sxiv -rat"
-alias todo="vi ~/docs/todo.md"
-alias startx="startx ~/.config/X11/xinitrc"
+alias todo="vi $HOME/docs/todo.md"
+alias startx="startx $XDG_CONFIG_HOME/X11/xinitrc"
 
-source ~/.config/git-prompt.sh
+source $XDG_CONFIG_HOME/git-prompt.sh
 PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 "(%s) ")'; PS1='\[\e[38;5;56;1m\]\w\[\e[0m\] \[\e[2;3m\]${PS1_CMD1}\[\e[0;38;5;129;1m\]>\[\e[0m\] '
-
-force_color_prompt=yes
