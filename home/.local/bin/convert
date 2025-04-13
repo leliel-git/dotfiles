@@ -1,0 +1,10 @@
+#!/bin/sh
+
+from=$1
+to=$2
+
+mkdir "$to"
+for file in *; do
+	file=$(basename "$file" ."$from")
+	ffmpeg -i "$file.$from" -q:a 0 "$to/$file.$to"
+done
