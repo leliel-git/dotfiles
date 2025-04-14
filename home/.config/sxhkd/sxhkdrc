@@ -52,3 +52,5 @@ super + x
 	sxiv -rat ~/img
 super + n
 	passmenu --type
+Menu
+	xdotool click 1
