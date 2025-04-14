@@ -17,8 +17,10 @@
 		"font",
 		"cursor",
 		"terminal",
-		"terminalfont",
-		"cpu",
+		{
+			"type": "cpu",
+			"temp": true
+		},
 		"gpu",
 		"memory",
 		"swap",
