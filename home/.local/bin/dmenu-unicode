@@ -4,18 +4,18 @@
 
 # Get user selection via dmenu from emoji file.
 if [ -n "$XDG_DATA_HOME" ]; then
-	chosen=$(cut -d ';' -f1 "$XDG_DATA_HOME"/dmenu/* | dmenu | sed "s/ .*//")
+	chosen=$(cat "$XDG_DATA_HOME/dmenu/emojis" | dmenu | sed "s/ .*//")
 else
-	chosen=$(cut -d ';' -f1 "$HOME"/.local/share/dmenu/* | dmenu | sed "s/ .*//")
+	chosen=$(cat "$HOME/.local/share/dmenu/emojis" | dmenu | sed "s/ .*//")
 fi
-
+☺️
 # Exit if none chosen.
 [ -z "$chosen" ] && exit 1
 
 # If you run this command with an argument, it will automatically insert the
 # character. Otherwise, show a message that the emoji has been copied.
 if [ -n "$1" ]; then
-	xdotool type "$chosen"
+	xdotool type --delay 200 "$chosen"
 else
 	printf "%s" "$chosen" | xclip -selection clipboard
 	notify-send "'$chosen' copied to clipboard." &
