@@ -1,0 +1,4 @@
+#!/bin/sh
+
+flag=$(nmcli networking)
+[ "$flag" = "enabled" ] && echo ON || echo OFF

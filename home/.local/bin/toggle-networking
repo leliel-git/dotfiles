@@ -3,8 +3,8 @@
 flag=$(nmcli networking)
 if [ "$flag" = "enabled" ]; then
 	nmcli networking off
-	notify-send -t 2048 -u normal "connection terminated"
+	notify-send -i "network-wireless-offline-symbolic" -t 2048 -u normal "connection terminated"
 else
 	nmcli networking on
-	notify-send -t 2048 -u normal "connection started"
+	notify-send -i "network-wireless-signal-excellent-symbolic" -t 2048 -u normal "connection started"
 fi
