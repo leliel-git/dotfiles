@@ -54,3 +54,5 @@ super + n
 	passmenu --type
 Menu
 	xdotool click 1
+shift + Menu
+	xdotool click 2
