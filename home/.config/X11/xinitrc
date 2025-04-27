@@ -39,8 +39,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 if [ -n "$failsafe" ]; then
-	sh $XDG_CONFIG_HOME/wallpaper
-	picom -b
+	[ -f $XDG_CONFIG_HOME/wallpaper ] && sh $XDG_CONFIG_HOME/wallpaper
+	#picom -b
 	sct 4500
 	slstatus &
 	sxhkd &
