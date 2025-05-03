@@ -3,12 +3,9 @@
 # The famous "get a menu of emojis to copy" script.
 
 # Get user selection via dmenu from emoji file.
-if [ -n "$XDG_DATA_HOME" ]; then
-	chosen=$(cat "$XDG_DATA_HOME/dmenu/emojis" | dmenu | sed "s/ .*//")
-else
-	chosen=$(cat "$HOME/.local/share/dmenu/emojis" | dmenu | sed "s/ .*//")
-fi
-☺️
+XDG_DATA_HOME=${XDG_DATA_HOME:-"$HOME/.local/share"}
+chosen=$(cat "$XDG_DATA_HOME/dmenu/emojis" | dmenu | sed "s/ .*//")
+
 # Exit if none chosen.
 [ -z "$chosen" ] && exit 1
 
