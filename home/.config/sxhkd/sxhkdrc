@@ -1,5 +1,3 @@
-super + a
-	doas poweroff
 super + s
 	librewolf
 super + c
