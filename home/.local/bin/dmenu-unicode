@@ -4,7 +4,7 @@
 
 # Get user selection via dmenu from emoji file.
 XDG_DATA_HOME=${XDG_DATA_HOME:-"$HOME/.local/share"}
-chosen=$(cat "$XDG_DATA_HOME/dmenu/emojis" | dmenu | sed "s/ .*//")
+chosen=$(cat "$XDG_DATA_HOME/dmenu/emojis" | dmenu -i | sed "s/ .*//")
 
 # Exit if none chosen.
 [ -z "$chosen" ] && exit 1

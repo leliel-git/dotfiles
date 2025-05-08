@@ -1,7 +1,7 @@
 #!/bin/sh
 
 XDG_DATA_HOME=${XDG_DATA_HOME:-"$HOME/.local/share"}
-chosen=$(cat "$XDG_DATA_HOME"/bookmarks/main | dmenu)
+chosen=$(cat "$XDG_DATA_HOME"/bookmarks/main | dmenu -i)
 
 [ -z "$chosen" ] && exit 1
 
