@@ -28,7 +28,7 @@ These are my personal dotfiles. Feel free to use them.
 
 ## Usage
 ```
-stow dotfiles/home
+./dotlink
 ```
 
 ## Notes

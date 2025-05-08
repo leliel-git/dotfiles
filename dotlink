@@ -1,0 +1,4 @@
+#!/bin/sh
+
+mkdir -p $HOME/.config $HOME/.local/share $HOME/.cache/X11
+stow home
