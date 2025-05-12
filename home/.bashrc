@@ -23,7 +23,7 @@ alias e="doas emerge"
 alias monerod="doas monerod"
 alias wallet="(cd $XDG_DATA_HOME/monero/wallets && doas monero-wallet-cli)"
 alias nnn="nnn -deHr"
-alias sxiv="sxiv -rat"
+alias nsxiv="nsxiv -rat"
 alias todo="vi $HOME/docs/todo.md"
 alias startx="startx $XDG_CONFIG_HOME/X11/xinitrc"
 

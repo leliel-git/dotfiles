@@ -10,7 +10,7 @@ These are my personal dotfiles. Feel free to use them.
     - X11
     - bash
     - nvim
-    - sxiv
+    - nsxiv
     - dunst
     - picom
     - sxhkd

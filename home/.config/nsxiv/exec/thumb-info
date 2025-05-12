@@ -1,0 +1,8 @@
+#!/bin/sh
+
+exec 2>/dev/null
+
+filepath="$1"
+filesize=$(du -bh "$1" | cut -f 1)
+
+echo "[$filesize] [$filepath]"

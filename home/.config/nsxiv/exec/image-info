@@ -1,0 +1,9 @@
+#!/bin/sh
+
+exec 2>/dev/null
+
+filepath="$1"
+filesize=$(du -bh "$1" | cut -f 1)
+geometry="$2x$3"
+
+echo "[$filesize] [$geometry] [$filepath]"
