@@ -11,7 +11,7 @@ super + e
 super + v
 	dmenu-bookmarks print
 super + r
-	st -e nnn -deHr
+	st -e nnn -deH
 super + u
 	setxkbmap us
 super + y
