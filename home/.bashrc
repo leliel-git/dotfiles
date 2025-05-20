@@ -17,8 +17,9 @@ fi
 alias doas="doas "
 alias vi="nvim"
 alias ls="ls -XF --color=auto --group-directories-first"
-alias li="ls -lhA"
-alias ll="ls -lh"
+alias ll="ls -1h"
+alias li="ls -1hA"
+alias la="ls -lhA"
 alias e="doas emerge"
 alias monerod="doas monerod"
 alias wallet="(cd $XDG_DATA_HOME/monero/wallets && doas monero-wallet-cli)"
@@ -30,3 +31,6 @@ alias startx="startx $XDG_CONFIG_HOME/X11/xinitrc"
 source $XDG_CONFIG_HOME/git-prompt.sh
 PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 "(%s) ")'
 PS1='\[\e[38;5;56;1m\]\w\[\e[0m\] \[\e[2;3m\]${PS1_CMD1}\[\e[0;38;5;129;1m\]>\[\e[0m\] '
+
+# X keeps resetting this option from xinitrc, this is just a little trick to make it persistent
+[ -n "$DISPLAY" ] && xset r rate 250 50

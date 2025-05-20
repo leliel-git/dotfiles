@@ -1,3 +1,5 @@
 Xft.dpi: 120
+Xcursor.theme: xcursor-plan9
 Nsxiv.window.background: #000000
 Nsxiv.window.foreground: #FFFFFF
+Nsxiv.window.alpha: 0.8

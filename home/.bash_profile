@@ -18,8 +18,9 @@ export EDITOR=nvim
 export TERMINAL=st
 export BROWSER=librewolf
 export GTK_THEME=Adwaita:dark
-
 export NNN_USE_EDITOR=1
+
+export FIGNORE=".o:.d"
 
 if shopt -q login_shell; then
 	[[ -f ~/.bashrc ]] && source ~/.bashrc

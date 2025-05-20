@@ -1,4 +1,4 @@
 -o %(title)s.%(ext)s
---sub-lang en
---embed-subs
+--write-subs
+--sub-langs "en.*,es.*"
 --add-metadata
