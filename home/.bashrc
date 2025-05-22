@@ -23,7 +23,7 @@ alias la="ls -lhA"
 alias monerod="doas monerod"
 alias wallet="(cd $XDG_DATA_HOME/monero/wallets && doas monero-wallet-cli)"
 alias nnn="nnn -deH"
-alias nsxiv="nsxiv -rat"
+alias nsxiv="nsxiv -at"
 alias todo="vi $HOME/docs/todo.md"
 alias startx="startx $XDG_CONFIG_HOME/X11/xinitrc"
 

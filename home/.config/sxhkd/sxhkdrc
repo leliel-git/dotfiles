@@ -49,7 +49,7 @@ super + Down
 super + Right 
 	xrandr -o left
 super + x
-	nsxiv -rat ~/img
+	nsxiv -at ~/img
 super + n
 	passmenu --type
 Menu
