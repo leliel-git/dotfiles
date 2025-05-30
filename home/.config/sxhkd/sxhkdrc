@@ -37,9 +37,9 @@ XF86Calculator
 Scroll_Lock
 	backlight
 Print
-	maim ~/img/screenshots/$(date +%Y-%m-%d:%H-%M-%S.png) | xclip -selection clipboard -t image/png -i $f
+	maim | tee ~/img/screenshots/$(date +%Y-%m-%d:%H-%M-%S.png) | xclip -selection clipboard -t image/png
 super + Print
-	maim -s ~/img/screenshots/$(date +%Y-%m-%d:%H-%M-%S.png) | xclip -selection clipboard -t image/png -i $f
+	maim -s | tee ~/img/screenshots/$(date +%Y-%m-%d:%H-%M-%S.png) | xclip -selection clipboard -t image/png
 super + Up 
 	xrandr -o inverted
 super + Left 

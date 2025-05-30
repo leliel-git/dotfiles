@@ -2,3 +2,9 @@
 [Default Applications]
 inode/directory=nnn.desktop
 application/pdf=org.pwmt.zathura-pdf-poppler.desktop
+image=nsxiv.desktop
+image/png=nsxiv.desktop
+image/jpg=nsxiv.desktop
+image/jpeg=nsxiv.desktop
+image/*=nsxiv.desktop
+image/tiff=nsxiv.desktop
