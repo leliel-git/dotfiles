@@ -10,14 +10,14 @@ super + e
 	dmenu-unicode print
 super + v
 	dmenu-bookmarks print
+super + shift + v
+	bookmarkthis
 super + r
 	st -e nnn -deH
 super + u
 	setxkbmap us
 super + y
 	setxkbmap latam
-super + o
-	bookmarkthis
 XF86MonBrightnessUp
 	brightness increase
 XF86MonBrightnessDown
