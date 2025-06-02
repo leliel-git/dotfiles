@@ -17,11 +17,11 @@ do
 		echo -n "$file" | xclip -selection clipboard &&
 		notify-send -u normal -i "$file" "copied to the clipboard." ;;
 	"r")
-		convert -rotate 90 "$file" "$file" ;;
+		magick convert -rotate 90 "$file" "$file" ;;
 	"l")
-		convert -rotate -90 "$file" "$file" ;;
+		magick convert -rotate -90 "$file" "$file" ;;
 	"f")
-		convert -flop "$file" "$file" ;;
+		magick convert -flop "$file" "$file" ;;
 	"d")
 		rm "$file" ;;
 	esac
