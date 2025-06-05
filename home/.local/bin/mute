@@ -4,7 +4,7 @@ is_mute=$(pamixer --get-mute)
 pamixer -t
 
 if [ "$is_mute" = "true" ]; then
-	notify-send -t 2048 -u normal -i audio-volume-high-rtl-symbolic "sound unmuted"
+	notify-send -t 2048 "sound unmuted"
 else
-	notify-send -t 2048 -u normal -i audio-volume-muted-rtl-symbolic "sound muted"
+	notify-send -t 2048 "sound muted"
 fi

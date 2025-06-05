@@ -12,7 +12,7 @@ touch "$file"
 if grep -qF "$bookmark" "$file"; then
 	cache="$(mktemp)"
 	grep -vF "$bookmark" "$file" > "$cache" && mv "$cache" "$file"
-	notify-send -t 60000 -u normal -i emblem-important-symbolic "$bookmark removed from the bookmarks."
+	notify-send -t 60000 "$bookmark removed from the bookmarks."
 else
-	echo "$bookmark" >> "$file" && notify-send -t 60000 -u normal -i emblem-favorite-symbolic "$bookmark added to the bookmarks."
+	echo "$bookmark" >> "$file" && notify-send -t 60000 "$bookmark added to the bookmarks."
 fi
