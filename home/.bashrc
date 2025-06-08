@@ -27,6 +27,11 @@ alias nsxiv="nsxiv -at"
 alias todo="vi $HOME/docs/todo.md"
 alias startx="startx $XDG_CONFIG_HOME/X11/xinitrc"
 
-source $XDG_CONFIG_HOME/git-prompt.sh
+. $XDG_CONFIG_HOME/git-completion.bash
+. $XDG_CONFIG_HOME/git-prompt.sh
+
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
 PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 "(%s) ")'
 PS1='\[\e[38;5;56;1m\]\w\[\e[0m\] \[\e[2;3m\]${PS1_CMD1}\[\e[0;38;5;129;1m\]>\[\e[0m\] '
