@@ -33,5 +33,6 @@ alias startx="startx $XDG_CONFIG_HOME/X11/xinitrc"
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_PS1_SHOWUPSTREAM="auto"
 PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 "(%s) ")'
 PS1='\[\e[38;5;56;1m\]\w\[\e[0m\] \[\e[2;3m\]${PS1_CMD1}\[\e[0;38;5;129;1m\]>\[\e[0m\] '
