@@ -23,6 +23,7 @@ export NNN_USE_EDITOR=1
 export FIGNORE=".o:.d"
 
 if shopt -q login_shell; then
+	gentoo-pipewire-launcher &
 	[[ -f ~/.bashrc ]] && source ~/.bashrc
 	[[ -t 0 && $(tty) == /dev/tty1 && ! $DISPLAY ]]
 else

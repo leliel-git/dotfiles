@@ -1,9 +1,9 @@
 #!/bin/sh
 
-is_mute=$(pamixer --get-mute)
-pamixer -t
+is_mute=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d' ' -f3)
+wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 
-if [ "$is_mute" = "true" ]; then
+if [ "$is_mute" = "[MUTED]" ]; then
 	notify-send -t 2048 "sound unmuted"
 else
 	notify-send -t 2048 "sound muted"

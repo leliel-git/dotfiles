@@ -1,9 +1,14 @@
 #!/bin/sh
 
 if [ "$1" = "increase" ]; then
-	pamixer -i 10
-	notify-send -t 2048 "volume increased: $(pamixer --get-volume)"
+	volume="$(echo "$(echo $(wpctl get-volume @DEFAULT_AUDIO_SINK@) | cut -d' ' -f2) * 100" | bc | cut -d'.' -f1)"
+	if [ "$volume" -lt "100" ]; then
+		wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+
+		volume="$(($volume + 10))"
+		notify-send -t 2048 "volume increased: $volume"
+	fi
 else
-	pamixer -d 10
-	notify-send -t 2048 "volume decreased: $(pamixer --get-volume)"
+	wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-
+	volume="$(echo "$(echo $(wpctl get-volume @DEFAULT_AUDIO_SINK@) | cut -d' ' -f2) * 100" | bc | cut -d'.' -f1)"
+	notify-send -t 2048 "volume decreased: $volume"
 fi

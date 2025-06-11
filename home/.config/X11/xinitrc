@@ -45,7 +45,7 @@ if [ -n "$failsafe" ]; then
 	sct 4500
 	slstatus &
 	sxhkd &
-	exec dwm
+	exec dbus-launch --exit-with-session dwm
 else
 	exec $command
 fi
