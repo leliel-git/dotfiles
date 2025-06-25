@@ -11,6 +11,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export XAUTHORITY="$XDG_CACHE_HOME/X11/Xauthority"
+export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
 
 export VISUAL=nvim
 export EDITOR=nvim
@@ -27,6 +28,7 @@ export FIGNORE=".o:.d"
 
 export HISTFILE="$HOME/.local/share/bash_history"
 export HISTSIZE=5000
+
 
 if shopt -q login_shell; then
 	[[ -f ~/.bashrc ]] && source ~/.bashrc
