@@ -29,7 +29,6 @@ export FIGNORE=".o:.d"
 export HISTFILE="$HOME/.local/share/bash_history"
 export HISTSIZE=5000
 
-
 if shopt -q login_shell; then
 	[[ -f ~/.bashrc ]] && source ~/.bashrc
 	[[ -t 0 && $(tty) == /dev/tty1 && ! $DISPLAY ]]
