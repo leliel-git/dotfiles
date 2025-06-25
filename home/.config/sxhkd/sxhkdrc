@@ -13,7 +13,7 @@ super + v
 super + shift + v
 	bookmarkthis
 super + r
-	st -e nnn -deH -T V
+	st -e nnn -deH -T v
 super + u
 	setxkbmap us
 super + y
