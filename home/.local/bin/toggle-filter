@@ -1,0 +1,8 @@
+#!/bin/sh
+
+flag=$(xrandr --verbose | grep Gamma | awk '{print $2}')
+if [ "$flag" = "1.0:1.0:1.0" ]; then
+	xrandr --output eDP-1 --gamma 1:1.2:.8
+else
+	xrandr --output eDP-1 --gamma 1:1:1
+fi

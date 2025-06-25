@@ -3,7 +3,7 @@ super + s
 super + c
 	st -e cmus
 super + q
-	xset r rate 250 50
+	xset r rate 250 50; setxkbmap -option caps:super
 super + z
 	zathura
 super + e
@@ -13,11 +13,13 @@ super + v
 super + shift + v
 	bookmarkthis
 super + r
-	st -e nnn -deH
+	st -e nnn -deH -T V
 super + u
 	setxkbmap us
 super + y
 	setxkbmap latam
+super + g
+	toggle-filter
 XF86MonBrightnessUp
 	brightness increase
 XF86MonBrightnessDown

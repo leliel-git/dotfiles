@@ -18,14 +18,20 @@ export EDITOR=nvim
 export TERMINAL=st
 export BROWSER=librewolf
 export GTK_THEME=Adwaita:dark
+
 export NNN_USE_EDITOR=1
+export NNN_FCOLORS=c1e2812e002169eec6d6abc4
+export NNN_COLORS=5555
 
 export FIGNORE=".o:.d"
 
+export HISTFILE="$HOME/.local/share/bash_history"
+export HISTSIZE=5000
+
 if shopt -q login_shell; then
-	gentoo-pipewire-launcher &
 	[[ -f ~/.bashrc ]] && source ~/.bashrc
 	[[ -t 0 && $(tty) == /dev/tty1 && ! $DISPLAY ]]
+	gentoo-pipewire-launcher &
 else
 	exit 1 # Somehow this is a non-bash or non-login shell.
 fi

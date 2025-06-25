@@ -5,8 +5,8 @@ if [ "$1" = "increase" ]; then
 	if [ "$volume" -lt "100" ]; then
 		wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+
 		volume="$(($volume + 10))"
-		notify-send -t 2048 "volume increased: $volume"
 	fi
+	notify-send -t 2048 "volume increased: $volume"
 else
 	wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-
 	volume="$(echo "$(echo $(wpctl get-volume @DEFAULT_AUDIO_SINK@) | cut -d' ' -f2) * 100" | bc | cut -d'.' -f1)"

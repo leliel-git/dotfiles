@@ -42,7 +42,8 @@ if [ -n "$failsafe" ]; then
 	[ -f $XDG_CONFIG_HOME/X11/wallpaper ] && sh $XDG_CONFIG_HOME/X11/wallpaper
 	picom -b
 	xset r rate 250 50
-	sct 4500
+	xrandr --output eDP-1 --gamma 1:1.2:.8
+	setxkbmap -option caps:super
 	slstatus &
 	sxhkd &
 	exec dbus-launch --exit-with-session dwm
