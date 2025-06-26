@@ -4,7 +4,7 @@ bookmark="$(xclip -o)"
 [ -z "${bookmark}" ] && exit 1
 
 XDG_DATA_HOME=${XDG_DATA_HOME:-"$HOME/.local/share"}
-file="$XDG_DATA_HOME/bookmarks/main"
+file="$XDG_DATA_HOME/bookmarks/main.md"
 
 mkdir -p "$(dirname "$file")"
 touch "$file"

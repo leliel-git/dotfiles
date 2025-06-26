@@ -25,9 +25,9 @@ alias wallet="(cd $XDG_DATA_HOME/monero/wallets && doas monero-wallet-cli)"
 alias nnn="nnn -deH"
 alias nsxiv="nsxiv -at"
 alias todo="vi $HOME/docs/todo.md"
+alias books="vi $XDG_DATA_HOME/bookmarks/main.md"
 alias startx="startx $XDG_CONFIG_HOME/X11/xinitrc"
 alias hs="hugo serve --noHTTPCache"
-
 
 . $XDG_CONFIG_HOME/git-completion.bash
 . $XDG_CONFIG_HOME/git-prompt.sh

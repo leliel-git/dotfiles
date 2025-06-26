@@ -6,12 +6,12 @@ do
 	fullpath="$(pwd)/$file"
 	case "$1" in
 	"w")
-		xwallpaper --focus "$file" &&
-		printf "%s\n%s\n" "#!/bin/sh" "xwallpaper --focus \"$file\"" > $XDG_CONFIG_HOME/X11/wallpaper &&
+		feh --no-fehbg --bg-max "$file" &&
+		printf "%s\n%s\n" "#!/bin/sh" "feh --no-fehbg --bg-max \"$file\"" > $XDG_CONFIG_HOME/X11/wallpaper &&
 		notify-send -u normal -i "$file" "was set as the wallpaper (centered)." ;;
 	"z")
-		xwallpaper --zoom "$file" &&
-		printf "%s\n%s\n" "#!/bin/sh" "xwallpaper --zoom \"$file\"" > $XDG_CONFIG_HOME/X11/wallpaper &&
+		feh --no-fehbg --bg-fill "$file" &&
+		printf "%s\n%s\n" "#!/bin/sh" "feh --no-fehbg --bg-fill \"$file\"" > $XDG_CONFIG_HOME/X11/wallpaper &&
 		notify-send -u normal -i "$file" "was set as the wallpaper (zoomed)." ;;
 	"y")
 		echo -n "$file" | xclip -selection clipboard &&
