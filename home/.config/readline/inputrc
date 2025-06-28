@@ -1,1 +1,3 @@
-.dotfiles/home/.inputrc
+set colored-stats on
+set completion-ignore-case On
+set completion-prefix-display-length 3

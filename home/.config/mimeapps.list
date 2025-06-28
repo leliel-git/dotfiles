@@ -8,3 +8,5 @@ image/jpg=nsxiv.desktop
 image/jpeg=nsxiv.desktop
 image/*=nsxiv.desktop
 image/tiff=nsxiv.desktop
+x-scheme-handler/magnet=torrent.desktop;
+application/x-bittorrent=torrent.desktop;

@@ -28,6 +28,7 @@ alias todo="vi $HOME/docs/todo.md"
 alias books="vi $XDG_DATA_HOME/bookmarks/main.md"
 alias startx="startx $XDG_CONFIG_HOME/X11/xinitrc"
 alias hs="hugo serve --noHTTPCache"
+alias atr="transmission-remote -a"
 
 . $XDG_CONFIG_HOME/git-completion.bash
 . $XDG_CONFIG_HOME/git-prompt.sh
