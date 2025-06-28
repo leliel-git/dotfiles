@@ -1,25 +1,32 @@
-super + s
-	librewolf
 super + c
 	st -e cmus
-super + q
-	xset r rate 250 50; setxkbmap -option caps:super
-super + z
-	zathura
 super + e
 	dmenu-unicode print
+super + g
+	toggle-filter
+super + n
+	passmenu --type
+super + q
+	xset r rate 250 50; setxkbmap -option caps:super
+super + r
+	st -e nnn -deH -T v
+super + s
+	librewolf
+super + shift + t
+	st -e trt
+super + u
+	setxkbmap us
 super + v
 	dmenu-bookmarks print
 super + shift + v
 	bookmarkthis
-super + r
-	st -e nnn -deH -T v
-super + u
-	setxkbmap us
+super + x
+	nsxiv -at ~/img
 super + y
 	setxkbmap latam
-super + g
-	toggle-filter
+super + z
+	zathura
+
 XF86MonBrightnessUp
 	brightness increase
 XF86MonBrightnessDown
@@ -28,20 +35,24 @@ XF86AudioNext
 	brightness increase
 XF86AudioPrev
 	brightness decrease
+
 XF86AudioRaiseVolume
 	volume increase
 XF86AudioLowerVolume
 	volume decrease
 XF86AudioMute
 	mute
+
 XF86Calculator
 	toggle-networking
 Scroll_Lock
 	backlight
+
 Print
 	maim | tee ~/img/screenshots/$(date +%Y-%m-%d:%H-%M-%S.png) | xclip -selection clipboard -t image/png
 super + Print
 	maim -s | tee ~/img/screenshots/$(date +%Y-%m-%d:%H-%M-%S.png) | xclip -selection clipboard -t image/png
+
 super + Up 
 	xrandr -o inverted
 super + Left 
@@ -50,10 +61,7 @@ super + Down
 	xrandr -o normal
 super + Right 
 	xrandr -o left
-super + x
-	nsxiv -at ~/img
-super + n
-	passmenu --type
+
 Menu
 	xdotool click 1
 shift + Menu
