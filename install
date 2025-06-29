@@ -1,0 +1,30 @@
+#!/bin/sh
+
+mkdir -p $HOME/.local/share/gnupg $HOME/.cache/X11
+
+DOT_HOME="$(pwd)/home"
+for i in $(find "$DOT_HOME" -type f); do
+
+	base="${i#$DOT_HOME/}"
+	link="$HOME/$base"
+
+	mkdir -p "$(dirname "$link")"
+	
+	if [ -e "$link" ] || [ -L "$link" ]; then
+		echo "Warning: $link already exists."
+		echo -n "Do you want to overwrite it? [y/n]: "
+		read answer
+
+		if [ "$answer" = "y" ]; then
+			rm -rf "$link"
+		else
+			echo "Skipping $link...\n"
+			continue
+		fi
+	fi
+	
+	ln -s "$i" "$link"
+	echo "Linked $link -> $i\n"
+done
+
+echo "All files from $DOT_HOME have been symlinked to $HOME."

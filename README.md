@@ -22,13 +22,13 @@ These are my personal dotfiles. Feel free to use them.
 - An emoji file
 
 ## Requirements
-- Obviously, you need all the programs I just listed in the previous section, but if you don't want to use any of them, you can delete them from the `home` directory.
-- It's recommended to use [GNU Stow](https://www.gnu.org/software/stow) to link these dotfiles using the boostrap script, but you're free to use the method you want to use. Otherwise, download them yourself and link their paths.
+- Obviously, you need all the programs listed in the previous section, but if you don't want to use any of them, you can delete them from the `home` directory.
+- A POSIX compliant shell
 - And, of course, you will need [git](https://git-scm.com), to clone this repository.
 
 ## Usage
 ```
-./dotlink
+./install
 ```
 
 ## Notes
