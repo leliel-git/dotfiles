@@ -1,4 +1,9 @@
 #!/bin/sh
+	
+RED='\033[1;31m'
+GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+NORMAL='\033[0m'
 
 # TODO: fix nvim submodule thing
 
@@ -13,20 +18,20 @@ for i in $(find "$DOT_HOME" -type f); do
 	mkdir -p "$(dirname "$link")"
 	
 	if [ -e "$link" ] || [ -L "$link" ]; then
-		echo "Warning: $link already exists."
-		echo -n "Do you want to overwrite it? [y/n]: "
+		echo "${RED}Warning: ${NORMAL}$link ${RED}already exists.${NORMAL}"
+		echo -n "Do you want to overwrite it? ${NORMAL}[${GREEN}y${NORMAL}/${RED}N${NORMAL}]: "
 		read answer
 
-		if [ "$answer" = "y" ]; then
+		if [ "$answer" = "y" ] || [ "$answer" = "Y" ]; then
 			rm -rf "$link"
 		else
-			echo "Skipping $link...\n"
+			echo "${YELLOW}Skipping ${NORMAL}$link${YELLOW} ...${NORMAL}\n"
 			continue
 		fi
 	fi
 	
 	ln -s "$i" "$link"
-	echo "Linked $link -> $i\n"
+	echo "${GREEN}Linked ${NORMAL}$link ${GREEN}-> ${NORMAL}$i\n"
 done
 
 echo "All files from $DOT_HOME have been symlinked to $HOME."
