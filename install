@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# TODO: fix nvim submodule thing
+
 mkdir -p $HOME/.local/share/gnupg $HOME/.cache/X11
 
 DOT_HOME="$(pwd)/home"

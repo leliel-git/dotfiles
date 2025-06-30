@@ -46,7 +46,7 @@ if [ -n "$failsafe" ]; then
 	setxkbmap -option caps:super
 	slstatus &
 	sxhkd &
-	exec dbus-launch --exit-with-session dwm
+	exec dwm
 else
 	exec $command
 fi
