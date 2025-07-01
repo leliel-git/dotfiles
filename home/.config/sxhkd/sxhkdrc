@@ -16,14 +16,14 @@ super + shift + t
 	st -e trt
 super + u
 	setxkbmap us
+super + shift + u
+	setxkbmap latam
 super + v
 	dmenu-bookmarks print
 super + shift + v
 	bookmarkthis
 super + x
 	nsxiv -at ~/img
-super + y
-	setxkbmap latam
 super + z
 	zathura
 
