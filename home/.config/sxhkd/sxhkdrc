@@ -26,6 +26,8 @@ super + x
 	nsxiv -at ~/img
 super + z
 	zathura
+super + shift + z
+	rm ~/.config/X11/wallpaper && xwallpaper --clear
 
 XF86MonBrightnessUp
 	brightness increase
