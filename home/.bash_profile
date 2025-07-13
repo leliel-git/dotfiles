@@ -20,6 +20,7 @@ export EDITOR=nvim
 export TERMINAL=st
 export BROWSER=librewolf
 export GTK_THEME=Adwaita:dark
+export QT_SCALE_FACTOR="1.5"
 
 export NNN_USE_EDITOR=1
 export NNN_FCOLORS=c1e2812e002169eec6d6abc4
