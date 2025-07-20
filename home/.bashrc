@@ -41,3 +41,9 @@ PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 "(%s) ")'
 PS1='\[\e[38;5;56;1m\]\w\[\e[0m\] \[\e[2;3m\]${PS1_CMD1}\[\e[0;38;5;129;1m\]>\[\e[0m\] '
 
 export LS_COLORS="di=01;35:ln=01;34:no=00;37:ex=01;32:or=01;31:"
+
+set -o vi
+bind -m vi-insert '"\e[A": ""'
+bind -m vi-insert '"\e[B": ""'
+bind -m vi-command '"\e[A": ""'
+bind -m vi-command '"\e[B": ""'

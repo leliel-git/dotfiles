@@ -44,6 +44,7 @@ if [ -n "$failsafe" ]; then
 	xset r rate 250 50
 	xrandr --output eDP-1 --gamma 1:1.2:.8
 	setxkbmap -option caps:super
+	xautocfg &
 	slstatus &
 	sxhkd &
 	exec dwm

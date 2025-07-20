@@ -6,8 +6,6 @@ super + g
 	toggle-filter
 super + n
 	passmenu --type
-super + q
-	xset r rate 250 50; setxkbmap -option caps:super
 super + r
 	st -e nnn -deH -T v
 super + s
