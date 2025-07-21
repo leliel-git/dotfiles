@@ -33,14 +33,16 @@ alias atr="transmission-remote -a"
 . $XDG_CONFIG_HOME/git-completion.bash
 . $XDG_CONFIG_HOME/git-prompt.sh
 
+export BC_ENV_ARGS="$XDG_CONFIG_HOME/bc"
+
+export LS_COLORS="di=01;35:ln=01;34:no=00;37:ex=01;32:or=01;31:"
+
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM="auto"
 PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 "(%s) ")'
 PS1='\[\e[38;5;56;1m\]\w\[\e[0m\] \[\e[2;3m\]${PS1_CMD1}\[\e[0;38;5;129;1m\]>\[\e[0m\] '
-
-export LS_COLORS="di=01;35:ln=01;34:no=00;37:ex=01;32:or=01;31:"
 
 set -o vi
 bind -m vi-insert '"\e[A": ""'
