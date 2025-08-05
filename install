@@ -17,7 +17,7 @@ for i in $(find "$DOT_HOME" -type f); do
 
 	mkdir -p "$(dirname "$link")"
 	
-	if [ -e "$link" ] || [ -L "$link" ]; then
+	if [ -e "$link" ] && [ ! -L "$link" ]; then
 		echo "${RED}Warning: ${NORMAL}$link ${RED}already exists.${NORMAL}"
 		echo -n "Do you want to overwrite it? ${NORMAL}[${GREEN}y${NORMAL}/${RED}N${NORMAL}]: "
 		read answer
@@ -30,8 +30,8 @@ for i in $(find "$DOT_HOME" -type f); do
 		fi
 	fi
 	
-	ln -s "$i" "$link"
-	echo "${GREEN}Linked ${NORMAL}$link ${GREEN}-> ${NORMAL}$i\n"
+	ln -sf "$i" "$link"
+	echo "${GREEN}Linked ${NORMAL}$link ${GREEN}-> ${NORMAL}$i"
 done
 
 echo "All files from $DOT_HOME have been symlinked to $HOME."
