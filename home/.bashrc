@@ -34,6 +34,7 @@ alias gc="git commit"
 alias gp="git push"
 alias gs="git status"
 alias gd="git diff"
+alias tree="tree --gitignore"
 
 . $XDG_CONFIG_HOME/git-completion.bash
 . $XDG_CONFIG_HOME/git-prompt.sh
