@@ -12,7 +12,5 @@ for battery in /sys/class/power_supply/BAT*; do
 done
 
 if [ $count -gt 0 ]; then
-	echo "$((total / count)) "
-else
-	echo " "
+	echo "$((total / count))"
 fi
